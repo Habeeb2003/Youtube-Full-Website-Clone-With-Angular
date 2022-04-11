@@ -19,13 +19,15 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatListModule } from '@angular/material/list'
 
 import {MaterialExampleModule} from '../material.module';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     WatchComponent,
-    SidenavbarComponent
+    SidenavbarComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

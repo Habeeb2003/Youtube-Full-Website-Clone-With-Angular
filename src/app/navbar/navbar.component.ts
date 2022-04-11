@@ -42,8 +42,11 @@ export class NavbarComponent implements OnDestroy {
 
   inputFocus(e:any): void {
     e.target.style.borderLeft = "none"
-    console.log(e);
-    
+    e.target.previousSibling.style.visibility = "visible";
+  }
+  inputBlur(e:any): void{
+    e.target.style.borderLeft = "2px solid lightgray"
+    e.target.previousSibling.style.visibility = "hidden";
   }
 
   //shouldRun = /(^|.)(stackblitz|webcontainer).(io|com)$/.test(window.location.host);
