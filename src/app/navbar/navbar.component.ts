@@ -45,7 +45,7 @@ export class NavbarComponent implements OnDestroy {
     e.target.previousSibling.style.visibility = "visible";
   }
   inputBlur(e:any): void{
-    e.target.style.borderLeft = "2px solid lightgray"
+    e.target.style.borderLeft = "2px solid black"
     e.target.previousSibling.style.visibility = "hidden";
   }
 

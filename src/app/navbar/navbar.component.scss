@@ -99,6 +99,7 @@ mat-drawer-content {
                     display: block;
                     color: black;
                     margin-bottom: 0;
+                    font-size: 13px;
                 }
                 i{
                     font-size: 30px;
@@ -135,14 +136,13 @@ mat-drawer{
             padding-left: 30px;
             a{
                 
-                //color: black;
+                color: black;
                 text-decoration: none;
                 display: flex;
                 align-items: center;
                 border: none;
                 outline: none;
                 i{
-                    background-color: white;
                     font-size: 30px;
                     margin-right: 30px;
                 }
