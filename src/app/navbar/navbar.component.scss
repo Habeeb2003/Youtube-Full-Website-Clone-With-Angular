@@ -76,6 +76,7 @@ mat-drawer-content {
     flex-direction: column;
     align-items: flex-start;
     .afterNavbar{
+        width: 100%;
         height: 90vh;
     }
     .miniSideNav{
@@ -111,6 +112,7 @@ mat-drawer-content {
         
     }
     .viewsArea{
+        width: 100%;
         height: 100%;
         overflow-y: scroll;
     }

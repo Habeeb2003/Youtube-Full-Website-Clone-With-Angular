@@ -20,6 +20,7 @@ import { MatListModule } from '@angular/material/list'
 
 import {MaterialExampleModule} from '../material.module';
 import { HomeComponent } from './home/home.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { HomeComponent } from './home/home.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     MatSidenavModule,
     MatGridListModule,
     MatCardModule,
