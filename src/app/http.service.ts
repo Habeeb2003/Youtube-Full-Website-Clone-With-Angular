@@ -1,4 +1,4 @@
-import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
@@ -10,14 +10,13 @@ export class HttpService {
 
   apiKey = 'AIzaSyC8nhcuvQDfbipM6yK_bCclfnfyL_cwTno'
 
-  headers = new HttpHeaders().set('TRN-Api-Key', this.apiKey)
 
   baseUrl : string = 'https://www.googleapis.com/youtube/v3'
 
   constructor(private http: HttpClient) { }
 
   getVideos(url: string):Observable<any>{
-    return this.http.get(this.baseUrl+url, {headers: this.headers})
+    return this.http.get(`${this.baseUrl}${url}&key=${this.apiKey}`)
     .pipe(
       catchError(this.handleError)
     )

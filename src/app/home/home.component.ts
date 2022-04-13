@@ -18,7 +18,7 @@ export class HomeComponent implements OnInit {
   }
 
   handleData(){
-    this.httpService.getVideos('video.list?&chart=mostPopular').subscribe((response) => {
+    this.httpService.getVideos('/videos?&chart=mostPopular').subscribe((response) => {
       console.log(response)
     })
   }
