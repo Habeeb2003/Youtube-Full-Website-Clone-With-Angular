@@ -91,51 +91,7 @@
                 <button *ngIf="!userIsSignedIn" class="signInBtn" style="font-size: 18px;"><span class="material-icons-outlined mr-2">&#xe853;</span>SIGN IN</button>
             </div>
         </nav>
-        <div class="afterNavbar d-flex">
-            <div style="display: none;" class="miniSideNav">
-                <ul class="view p-0">
-                    <li class="d-flex justify-content-center align-items-center">
-                        <a href="" class="d-flex justify-content-center align-items-center">
-                            <div>
-                                <i class="material-icons">&#xe88a;</i>
-                                <p>Home</p>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="d-flex justify-content-center align-items-center">
-                        <a href="" class="d-flex justify-content-center align-items-center">
-                            <div>
-                                <i class="material-icons-outlined">&#xe87a;</i>
-                                <p>Explore</p>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="d-flex justify-content-center align-items-center">
-                        <a href="" class="d-flex justify-content-center align-items-center">
-                            <div>
-                                <i class="material-icons-outlined">&#xe88a;</i>
-                                <p>Shorts</p>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="d-flex justify-content-center align-items-center">
-                        <a href="" class="d-flex justify-content-center align-items-center">
-                            <div>
-                                <i class="material-icons-outlined">&#xe064;</i>
-                                <p>Subscriptions</p>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="d-flex justify-content-center align-items-center">
-                        <a href="" class="d-flex justify-content-center align-items-center">
-                            <div>
-                                <i class="material-icons-outlined">&#xe04a;</i>
-                                <p>Library</p>
-                            </div>
-                        </a>
-                    </li>
-                </ul>
-            </div>
+        <div class="afterNavbar">
             <div class="viewsArea">
                 <router-outlet></router-outlet>
             </div>

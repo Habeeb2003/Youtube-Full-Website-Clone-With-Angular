@@ -1,196 +1,244 @@
-<div class="homeChips">
-    <mat-chip-list>
-        <mat-chip color="none" selected>All</mat-chip>
-        <mat-chip color="none" selected>Linux</mat-chip>
-        <mat-chip color="none" selected>Computer Programming</mat-chip>
-        <mat-chip color="none" selected>Nollywood</mat-chip>
-        <mat-chip color="none" selected>Music</mat-chip>
-        <mat-chip color="none" selected>Python</mat-chip>
-        <mat-chip color="none" selected>Raspberry Pi</mat-chip>
-    </mat-chip-list>
-</div>
-<div class="resultDiv">
-    <div class="videoResultdiv d-flex flex-wrap justify-content-start">
-        <div class="videoCard">
-            <div class="videoThumbnail" (click)="goToWatchPage()">
-
-            </div>
-            <div class="videoMediaBody pt-3 d-flex justify-content-between">
-                <div style="min-width: 45px; height: 45px; border-radius: 22px; background-color: #E1E1E1;">
-
-                </div>
-                <div class="pl-4 d-flex flex-wrap align-content-around">
-                    <div class="mb-2" style="width: 250px; height: 17px; background-color: #E1E1E1;">
-                        
+<div class="homeCon">
+    <div class="miniSideNav">
+        <ul class="view p-0">
+            <li class="d-flex justify-content-center align-items-center">
+                <a href="" class="d-flex justify-content-center align-items-center">
+                    <div>
+                        <i class="material-icons">&#xe88a;</i>
+                        <p>Home</p>
                     </div>
-                    <div class="mt-2" style="width: 175px; height: 17px; background-color: #E1E1E1;">
-
+                </a>
+            </li>
+            <li class="d-flex justify-content-center align-items-center">
+                <a href="" class="d-flex justify-content-center align-items-center">
+                    <div>
+                        <i class="material-icons-outlined">&#xe87a;</i>
+                        <p>Explore</p>
                     </div>
-                </div>
-            </div>
+                </a>
+            </li>
+            <li class="d-flex justify-content-center align-items-center">
+                <a href="" class="d-flex justify-content-center align-items-center">
+                    <div>
+                        <i class="material-icons-outlined">&#xe88a;</i>
+                        <p>Shorts</p>
+                    </div>
+                </a>
+            </li>
+            <li class="d-flex justify-content-center align-items-center">
+                <a href="" class="d-flex justify-content-center align-items-center">
+                    <div>
+                        <i class="material-icons-outlined">&#xe064;</i>
+                        <p>Subscriptions</p>
+                    </div>
+                </a>
+            </li>
+            <li class="d-flex justify-content-center align-items-center">
+                <a href="" class="d-flex justify-content-center align-items-center">
+                    <div>
+                        <i class="material-icons-outlined">&#xe04a;</i>
+                        <p>Library</p>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="homeViewArea">
+        <div class="homeChips">
+            <mat-chip-list>
+                <mat-chip color="none" selected>All</mat-chip>
+                <mat-chip color="none" selected>Linux</mat-chip>
+                <mat-chip color="none" selected>Computer Programming</mat-chip>
+                <mat-chip color="none" selected>Nollywood</mat-chip>
+                <mat-chip color="none" selected>Music</mat-chip>
+                <mat-chip color="none" selected>Python</mat-chip>
+                <mat-chip color="none" selected>Raspberry Pi</mat-chip>
+            </mat-chip-list>
         </div>
-        <div class="videoCard">
-            <div class="videoThumbnail">
-
-            </div>
-            <div class="videoMediaBody pt-3 d-flex justify-content-between">
-                <div style="min-width: 45px; height: 45px; border-radius: 22px; background-color: #E1E1E1;">
-
-                </div>
-                <div class="pl-4 d-flex flex-wrap align-content-around">
-                    <div class="mb-2" style="width: 250px; height: 17px; background-color: #E1E1E1;">
-                        
-                    </div>
-                    <div class="mt-2" style="width: 175px; height: 17px; background-color: #E1E1E1;">
-
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="videoCard">
-            <div class="videoThumbnail">
-
-            </div>
-            <div class="videoMediaBody pt-3 d-flex justify-content-between">
-                <div style="min-width: 45px; height: 45px; border-radius: 22px; background-color: #E1E1E1;">
-
-                </div>
-                <div class="pl-4 d-flex flex-wrap align-content-around">
-                    <div class="mb-2" style="width: 250px; height: 17px; background-color: #E1E1E1;">
-                        
-                    </div>
-                    <div class="mt-2" style="width: 175px; height: 17px; background-color: #E1E1E1;">
-
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="videoCard">
-            <div class="videoThumbnail">
-
-            </div>
-            <div class="videoMediaBody pt-3 d-flex justify-content-between">
-                <div style="min-width: 45px; height: 45px; border-radius: 22px; background-color: #E1E1E1;">
-
-                </div>
-                <div class="pl-4 d-flex flex-wrap align-content-around">
-                    <div class="mb-2" style="width: 250px; height: 17px; background-color: #E1E1E1;">
-                        
-                    </div>
-                    <div class="mt-2" style="width: 175px; height: 17px; background-color: #E1E1E1;">
-
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="videoCard">
-            <div class="videoThumbnail">
-
-            </div>
-            <div class="videoMediaBody pt-3 d-flex justify-content-between">
-                <div style="min-width: 45px; height: 45px; border-radius: 22px; background-color: #E1E1E1;">
-
-                </div>
-                <div class="pl-4 d-flex flex-wrap align-content-around">
-                    <div class="mb-2" style="width: 250px; height: 17px; background-color: #E1E1E1;">
-                        
-                    </div>
-                    <div class="mt-2" style="width: 175px; height: 17px; background-color: #E1E1E1;">
-
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="videoCard">
-            <div class="videoThumbnail">
-
-            </div>
-            <div class="videoMediaBody pt-3 d-flex justify-content-between">
-                <div style="min-width: 45px; height: 45px; border-radius: 22px; background-color: #E1E1E1;">
-
-                </div>
-                <div class="pl-4 d-flex flex-wrap align-content-around">
-                    <div class="mb-2" style="width: 250px; height: 17px; background-color: #E1E1E1;">
-                        
-                    </div>
-                    <div class="mt-2" style="width: 175px; height: 17px; background-color: #E1E1E1;">
-
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="videoCard">
-            <div class="videoThumbnail">
-
-            </div>
-            <div class="videoMediaBody pt-3 d-flex justify-content-between">
-                <div style="min-width: 45px; height: 45px; border-radius: 22px; background-color: #E1E1E1;">
-
-                </div>
-                <div class="pl-4 d-flex flex-wrap align-content-around">
-                    <div class="mb-2" style="width: 250px; height: 17px; background-color: #E1E1E1;">
-                        
-                    </div>
-                    <div class="mt-2" style="width: 175px; height: 17px; background-color: #E1E1E1;">
-
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="videoCard">
-            <div class="videoThumbnail">
-
-            </div>
-            <div class="videoMediaBody pt-3 d-flex justify-content-between">
-                <div style="min-width: 45px; height: 45px; border-radius: 22px; background-color: #E1E1E1;">
-
-                </div>
-                <div class="pl-4 d-flex flex-wrap align-content-around">
-                    <div class="mb-2" style="width: 250px; height: 17px; background-color: #E1E1E1;">
-                        
-                    </div>
-                    <div class="mt-2" style="width: 175px; height: 17px; background-color: #E1E1E1;">
-
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="videoCard">
-            <div class="videoThumbnail">
-
-            </div>
-            <div class="videoMediaBody pt-3 d-flex justify-content-between">
-                <div style="min-width: 45px; height: 45px; border-radius: 22px; background-color: #E1E1E1;">
-
-                </div>
-                <div class="pl-4 d-flex flex-wrap align-content-around">
-                    <div class="mb-2" style="width: 250px; height: 17px; background-color: #E1E1E1;">
-                        
-                    </div>
-                    <div class="mt-2" style="width: 175px; height: 17px; background-color: #E1E1E1;">
-
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="videoCard">
-            <div class="videoThumbnail">
-
-            </div>
-            <div class="videoMediaBody pt-3 d-flex justify-content-between">
-                <div style="min-width: 45px; height: 45px; border-radius: 22px; background-color: #E1E1E1;">
-
-                </div>
-                <div class="pl-4 d-flex flex-wrap align-content-around">
-                    <div class="mb-2" style="width: 250px; height: 17px; background-color: #E1E1E1;">
-                        
-                    </div>
-                    <div class="mt-2" style="width: 175px; height: 17px; background-color: #E1E1E1;">
-
-                    </div>
-                </div>
-            </div>
-        </div>
+        <div class="resultDiv">
+            <div class="videoResultdiv d-flex flex-wrap justify-content-start">
+                <div class="videoCard">
+                    <div class="videoThumbnail" (click)="goToWatchPage()">
         
+                    </div>
+                    <div class="videoMediaBody pt-3 d-flex justify-content-between">
+                        <div style="min-width: 45px; height: 45px; border-radius: 22px; background-color: #E1E1E1;">
+        
+                        </div>
+                        <div class="pl-4 d-flex flex-wrap align-content-around">
+                            <div class="mb-2" style="width: 250px; height: 17px; background-color: #E1E1E1;">
+                                
+                            </div>
+                            <div class="mt-2" style="width: 175px; height: 17px; background-color: #E1E1E1;">
+        
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="videoCard">
+                    <div class="videoThumbnail">
+        
+                    </div>
+                    <div class="videoMediaBody pt-3 d-flex justify-content-between">
+                        <div style="min-width: 45px; height: 45px; border-radius: 22px; background-color: #E1E1E1;">
+        
+                        </div>
+                        <div class="pl-4 d-flex flex-wrap align-content-around">
+                            <div class="mb-2" style="width: 250px; height: 17px; background-color: #E1E1E1;">
+                                
+                            </div>
+                            <div class="mt-2" style="width: 175px; height: 17px; background-color: #E1E1E1;">
+        
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="videoCard">
+                    <div class="videoThumbnail">
+        
+                    </div>
+                    <div class="videoMediaBody pt-3 d-flex justify-content-between">
+                        <div style="min-width: 45px; height: 45px; border-radius: 22px; background-color: #E1E1E1;">
+        
+                        </div>
+                        <div class="pl-4 d-flex flex-wrap align-content-around">
+                            <div class="mb-2" style="width: 250px; height: 17px; background-color: #E1E1E1;">
+                                
+                            </div>
+                            <div class="mt-2" style="width: 175px; height: 17px; background-color: #E1E1E1;">
+        
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="videoCard">
+                    <div class="videoThumbnail">
+        
+                    </div>
+                    <div class="videoMediaBody pt-3 d-flex justify-content-between">
+                        <div style="min-width: 45px; height: 45px; border-radius: 22px; background-color: #E1E1E1;">
+        
+                        </div>
+                        <div class="pl-4 d-flex flex-wrap align-content-around">
+                            <div class="mb-2" style="width: 250px; height: 17px; background-color: #E1E1E1;">
+                                
+                            </div>
+                            <div class="mt-2" style="width: 175px; height: 17px; background-color: #E1E1E1;">
+        
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="videoCard">
+                    <div class="videoThumbnail">
+        
+                    </div>
+                    <div class="videoMediaBody pt-3 d-flex justify-content-between">
+                        <div style="min-width: 45px; height: 45px; border-radius: 22px; background-color: #E1E1E1;">
+        
+                        </div>
+                        <div class="pl-4 d-flex flex-wrap align-content-around">
+                            <div class="mb-2" style="width: 250px; height: 17px; background-color: #E1E1E1;">
+                                
+                            </div>
+                            <div class="mt-2" style="width: 175px; height: 17px; background-color: #E1E1E1;">
+        
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="videoCard">
+                    <div class="videoThumbnail">
+        
+                    </div>
+                    <div class="videoMediaBody pt-3 d-flex justify-content-between">
+                        <div style="min-width: 45px; height: 45px; border-radius: 22px; background-color: #E1E1E1;">
+        
+                        </div>
+                        <div class="pl-4 d-flex flex-wrap align-content-around">
+                            <div class="mb-2" style="width: 250px; height: 17px; background-color: #E1E1E1;">
+                                
+                            </div>
+                            <div class="mt-2" style="width: 175px; height: 17px; background-color: #E1E1E1;">
+        
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="videoCard">
+                    <div class="videoThumbnail">
+        
+                    </div>
+                    <div class="videoMediaBody pt-3 d-flex justify-content-between">
+                        <div style="min-width: 45px; height: 45px; border-radius: 22px; background-color: #E1E1E1;">
+        
+                        </div>
+                        <div class="pl-4 d-flex flex-wrap align-content-around">
+                            <div class="mb-2" style="width: 250px; height: 17px; background-color: #E1E1E1;">
+                                
+                            </div>
+                            <div class="mt-2" style="width: 175px; height: 17px; background-color: #E1E1E1;">
+        
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="videoCard">
+                    <div class="videoThumbnail">
+        
+                    </div>
+                    <div class="videoMediaBody pt-3 d-flex justify-content-between">
+                        <div style="min-width: 45px; height: 45px; border-radius: 22px; background-color: #E1E1E1;">
+        
+                        </div>
+                        <div class="pl-4 d-flex flex-wrap align-content-around">
+                            <div class="mb-2" style="width: 250px; height: 17px; background-color: #E1E1E1;">
+                                
+                            </div>
+                            <div class="mt-2" style="width: 175px; height: 17px; background-color: #E1E1E1;">
+        
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="videoCard">
+                    <div class="videoThumbnail">
+        
+                    </div>
+                    <div class="videoMediaBody pt-3 d-flex justify-content-between">
+                        <div style="min-width: 45px; height: 45px; border-radius: 22px; background-color: #E1E1E1;">
+        
+                        </div>
+                        <div class="pl-4 d-flex flex-wrap align-content-around">
+                            <div class="mb-2" style="width: 250px; height: 17px; background-color: #E1E1E1;">
+                                
+                            </div>
+                            <div class="mt-2" style="width: 175px; height: 17px; background-color: #E1E1E1;">
+        
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="videoCard">
+                    <div class="videoThumbnail">
+        
+                    </div>
+                    <div class="videoMediaBody pt-3 d-flex justify-content-between">
+                        <div style="min-width: 45px; height: 45px; border-radius: 22px; background-color: #E1E1E1;">
+        
+                        </div>
+                        <div class="pl-4 d-flex flex-wrap align-content-around">
+                            <div class="mb-2" style="width: 250px; height: 17px; background-color: #E1E1E1;">
+                                
+                            </div>
+                            <div class="mt-2" style="width: 175px; height: 17px; background-color: #E1E1E1;">
+        
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
     </div>
 </div>

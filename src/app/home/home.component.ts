@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
   constructor(private httpService: HttpService, private router: Router) { }
 
   ngOnInit(): void {
-    //this.handleData()
+    this.handleData()
   }
 
   handleData(){
