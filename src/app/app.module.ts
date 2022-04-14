@@ -21,6 +21,8 @@ import { MatListModule } from '@angular/material/list'
 import {MaterialExampleModule} from '../material.module';
 import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
+import { CommentSectionComponent } from './comment-section/comment-section.component';
+import { RelatedVideosSectionComponent } from './related-videos-section/related-videos-section.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { HttpClientModule } from '@angular/common/http';
     NavbarComponent,
     WatchComponent,
     SidenavbarComponent,
-    HomeComponent
+    HomeComponent,
+    CommentSectionComponent,
+    RelatedVideosSectionComponent
   ],
   imports: [
     BrowserModule,

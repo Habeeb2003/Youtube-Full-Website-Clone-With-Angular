@@ -58,6 +58,10 @@
           width: calc(100% - 15% - 100px);
           padding-left: 20px;
           padding-right: 10px;
+          .description{
+            font-size: 19px;
+            font-family: Roboto, Arial, sans-serif;;
+          }
         }
         .subscribeBtnDiv{
           height: fit-content;
