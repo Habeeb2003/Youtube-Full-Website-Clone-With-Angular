@@ -23,6 +23,8 @@ import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CommentSectionComponent } from './comment-section/comment-section.component';
 import { RelatedVideosSectionComponent } from './related-videos-section/related-videos-section.component';
+import { ResultsComponent } from './results/results.component';
+import { MiniSideNavComponent } from './mini-side-nav/mini-side-nav.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { RelatedVideosSectionComponent } from './related-videos-section/related-
     SidenavbarComponent,
     HomeComponent,
     CommentSectionComponent,
-    RelatedVideosSectionComponent
+    RelatedVideosSectionComponent,
+    ResultsComponent,
+    MiniSideNavComponent
   ],
   imports: [
     BrowserModule,

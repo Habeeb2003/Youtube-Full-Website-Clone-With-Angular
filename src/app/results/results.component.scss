@@ -1,0 +1,41 @@
+.resultAreaView{
+    height: 90vh;
+    width: 100%;
+    overflow-y: scroll;
+    .filterCon{
+        .filterBtn{
+            border: none;
+            outline: none;
+            background-color: transparent;
+            font-size: 18px;
+        }
+        ul{
+            list-style: none;
+            padding-left: 0;
+            li{
+                cursor: pointer;
+                padding: 7px 0px;
+                font-size: 15px;
+            }
+        }
+        h6{
+            font-size: 15px;
+        }
+    }
+    .resultsCon .result{
+        .resultThumbnail{
+            aspect-ratio: 16 / 9;
+            width: 350px;
+            background-color: lightgray;
+        }
+        .resultDetails{
+            .resultChannel{
+                .banner{
+                    background-color: lightgray;
+                    aspect-ratio: 1/1;
+                    width: 35px;
+                }
+            }
+        }
+    }
+}
