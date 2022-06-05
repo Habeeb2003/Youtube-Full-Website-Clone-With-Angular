@@ -16,7 +16,7 @@
         </div>
     </div>
     <div class="commentsCon">
-        <div class="comment">
+        <div class="comment position-relative" *ngFor="let comment of comments">
             <div class="commentAvatar">
 
             </div>
@@ -25,121 +25,21 @@
                     <span class="commentName">Kanu Gamer </span>
                     <span class="commentTime">9 hours ago</span>
                 </div>
-                <p class="commentText">Best os for 2gb ram intel core 2 duo for smooth performance</p>
-                <div class="d-flex">
-                    <i class="material-icons-outlined">&#xe8dc;</i>
-                    <i class="material-icons-outlined">&#xe8db;</i>
-                    <i style="display: none;" class="material-icons"></i>
-                    <button class="replyBtn">REPLY</button>
+                <p class="commentText">Best os for 2gb ram intel core 2 duo for smooth performance Best os for 2gb ram intel core 2 duo for smooth performance Best os for 2gb ram intel core 2 duo for smooth performance Best os for 2gb ram intel core 2 duo for smooth performance</p>
+                <div class="d-flex commentAction">
+                    <div class="d-flex align-items-center">
+                        <span class="material-icons-outlined ico">&#xe8dc;</span>
+                        <span class="ml-2" style="color: #606060;">2.2k</span>
+                    </div>
+                    <div>
+                        <i class="material-icons-outlined ico">&#xe8db;</i>
+                    </div>
+                    <!-- <i style="display: none;" class="material-icons"></i> -->
+                    <button class="replyBtn" style="color: #606060;">REPLY</button>
                 </div>
             </div>
-            <div style="width: 40px; height: 40px; margin-left: auto;">
-                <i class="material-icons">&#xe5d4;</i>
-            </div>
-        </div>
-        <div class="comment">
-            <div class="commentAvatar">
-
-            </div>
-            <div class="commentDetails">
-                <div style="margin-bottom: 10px;">
-                    <span class="commentName">Kanu Gamer </span>
-                    <span class="commentTime">9 hours ago</span>
-                </div>
-                <p class="commentText">Best os for 2gb ram intel core 2 duo for smooth performance</p>
-                <div class="d-flex">
-                    <i class="material-icons-outlined">&#xe8dc;</i>
-                    <i class="material-icons-outlined">&#xe8db;</i>
-                    <i style="display: none;" class="material-icons"></i>
-                    <button class="replyBtn">REPLY</button>
-                </div>
-            </div>
-            <div style="width: 40px; height: 40px; margin-left: auto;">
-                <i class="material-icons">&#xe5d4;</i>
-            </div>
-        </div>
-        <div class="comment">
-            <div class="commentAvatar">
-
-            </div>
-            <div class="commentDetails">
-                <div style="margin-bottom: 10px;">
-                    <span class="commentName">Kanu Gamer </span>
-                    <span class="commentTime">9 hours ago</span>
-                </div>
-                <p class="commentText">Best os for 2gb ram intel core 2 duo for smooth performance</p>
-                <div class="d-flex">
-                    <i class="material-icons-outlined">&#xe8dc;</i>
-                    <i class="material-icons-outlined">&#xe8db;</i>
-                    <i style="display: none;" class="material-icons"></i>
-                    <button class="replyBtn">REPLY</button>
-                </div>
-            </div>
-            <div style="width: 40px; height: 40px; margin-left: auto;">
-                <i class="material-icons">&#xe5d4;</i>
-            </div>
-        </div>
-        <div class="comment">
-            <div class="commentAvatar">
-
-            </div>
-            <div class="commentDetails">
-                <div style="margin-bottom: 10px;">
-                    <span class="commentName">Kanu Gamer </span>
-                    <span class="commentTime">9 hours ago</span>
-                </div>
-                <p class="commentText">Best os for 2gb ram intel core 2 duo for smooth performance</p>
-                <div class="d-flex">
-                    <i class="material-icons-outlined">&#xe8dc;</i>
-                    <i class="material-icons-outlined">&#xe8db;</i>
-                    <i style="display: none;" class="material-icons"></i>
-                    <button class="replyBtn">REPLY</button>
-                </div>
-            </div>
-            <div style="width: 40px; height: 40px; margin-left: auto;">
-                <i class="material-icons">&#xe5d4;</i>
-            </div>
-        </div>
-        <div class="comment">
-            <div class="commentAvatar">
-
-            </div>
-            <div class="commentDetails">
-                <div style="margin-bottom: 10px;">
-                    <span class="commentName">Kanu Gamer </span>
-                    <span class="commentTime">9 hours ago</span>
-                </div>
-                <p class="commentText">Best os for 2gb ram intel core 2 duo for smooth performance</p>
-                <div class="d-flex">
-                    <i class="material-icons-outlined">&#xe8dc;</i>
-                    <i class="material-icons-outlined">&#xe8db;</i>
-                    <i style="display: none;" class="material-icons"></i>
-                    <button class="replyBtn">REPLY</button>
-                </div>
-            </div>
-            <div style="width: 40px; height: 40px; margin-left: auto;">
-                <i class="material-icons">&#xe5d4;</i>
-            </div>
-        </div>
-        <div class="comment">
-            <div class="commentAvatar">
-
-            </div>
-            <div class="commentDetails">
-                <div style="margin-bottom: 10px;">
-                    <span class="commentName">Kanu Gamer </span>
-                    <span class="commentTime">9 hours ago</span>
-                </div>
-                <p class="commentText">Best os for 2gb ram intel core 2 duo for smooth performance</p>
-                <div class="d-flex">
-                    <i class="material-icons-outlined">&#xe8dc;</i>
-                    <i class="material-icons-outlined">&#xe8db;</i>
-                    <i style="display: none;" class="material-icons"></i>
-                    <button class="replyBtn">REPLY</button>
-                </div>
-            </div>
-            <div style="width: 40px; height: 40px; margin-left: auto;">
-                <i class="material-icons">&#xe5d4;</i>
+            <div class="position-absolute" style="width: 40px; height: 40px; right: 0; top: 0;">
+                <button class="material-icons menuBtn">&#xe5d4;</button>
             </div>
         </div>
     </div>

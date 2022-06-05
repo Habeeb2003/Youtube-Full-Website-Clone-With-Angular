@@ -6,36 +6,38 @@
         </div>
         <div class="videoDetailsCon">
             <div>
-                <h4 style="font-family: Roboto, Arial, sans-serif;">Pop OS 22.04 vs Ubuntu 22.04: RAM Usage</h4>
+                <h5 class="vidTitle">Pop OS 22.04 vs Ubuntu 22.04: RAM Usage</h5>
             </div>
             <div class="actionsDivCon">
-                <div style="font-size: 19px;">
-                    <span>601 views</span>
-                    <span> . </span>
-                    <span>11 Apr 2022</span>
+                <div class="m-0 text-muted d-flex jusify-content-center align-items-center">
+                    <!-- video view count -->
+                    <span style="font-size: 13px;">1k views</span>
+                    <div class="material-icons mx-1" style="font-size: 4px;">circle</div>
+                    <!-- video published date  -->
+                    <span style="font-size: 13px">4 hours ago</span>
                 </div>
                 <div class="actionsDiv">
-                    <div matTooltip="I like this" matTooltipPositon="below">
-                        <span class="material-icons-outlined">&#xe8dc;</span>
+                    <div class="actionBtn" matTooltip="I like this" matTooltipPositon="below">
+                        <span class="material-icons-outlined ico">&#xe8dc;</span>
                         <span class="action">34k</span>
                     </div>
-                    <div matTooltip="I dislike this" matTooltipPositon="below">
-                        <span class="material-icons-outlined">&#xe8db;</span>
+                    <div class="actionBtn" matTooltip="I dislike this" matTooltipPositon="below">
+                        <span class="material-icons-outlined ico">&#xe8db;</span>
                         <span class="action">DISLIKE</span>
                     </div>
-                    <div matTooltip="Share" matTooltipPositon="below">
-                        <span class="material-icons-outlined" style="direction: ltr;">&#xe15e;</span>
+                    <div class="actionBtn" matTooltip="Share" matTooltipPositon="below">
+                        <span class="material-icons-outlined ico" style="direction: ltr;">&#xe15e;</span>
                         <span class="action">SHARE</span>
                     </div>
-                    <div matTooltip="Clip" matTooltipPositon="below">
-                        <span class="material-icons">&#xe14e;</span>
+                    <div class="actionBtn" matTooltip="Clip" matTooltipPositon="below">
+                        <span class="material-icons ico">&#xe14e;</span>
                         <span class="action">CLIP</span>
                     </div>
-                    <div matTooltip="Save" matTooltipPositon="below">
-                        <span class="material-icons">&#xe03b;</span>
+                    <div class="actionBtn" matTooltip="Save" matTooltipPositon="below">
+                        <span class="material-icons ico">&#xe03b;</span>
                         <span class="action">SAVE</span>
                     </div>
-                    <div>
+                    <div class="actionBtn">
                         <span class="material-icons">&#xe5d3;</span>
                     </div>
                 </div>
@@ -73,148 +75,20 @@
     </div>
     <div class="rightSide">
         <div class="relatedVideos">
-            <div class="videoCard">
+            <div class="videoCard" *ngFor="let video of relatedVideos">
                 <div class="videoThumbnail">
 
                 </div>
                 <div class="videoMediaBody">
-                    <h5 class="videoTitle">We ran OUT of IP Addresses!!</h5>
-                    <p class="channelName m-0">NetworkChuck</p>
-                    <span class="viewsNo">349k views</span>
-                    <span> . </span>
-                    <span class="uploadDate">4 days ago</span>
-                </div>
-            </div>
-            <div class="videoCard">
-                <div class="videoThumbnail">
-
-                </div>
-                <div class="videoMediaBody">
-                    <h5 class="videoTitle">We ran OUT of IP Addresses!!</h5>
-                    <p class="channelName m-0">NetworkChuck</p>
-                    <span class="viewsNo">349k views</span>
-                    <span> . </span>
-                    <span class="uploadDate">4 days ago</span>
-                </div>
-            </div>
-            <div class="videoCard">
-                <div class="videoThumbnail">
-
-                </div>
-                <div class="videoMediaBody">
-                    <h5 class="videoTitle">We ran OUT of IP Addresses!!</h5>
-                    <p class="channelName m-0">NetworkChuck</p>
-                    <span class="viewsNo">349k views</span>
-                    <span> . </span>
-                    <span class="uploadDate">4 days ago</span>
-                </div>
-            </div>
-            <div class="videoCard">
-                <div class="videoThumbnail">
-
-                </div>
-                <div class="videoMediaBody">
-                    <h5 class="videoTitle">We ran OUT of IP Addresses!!</h5>
-                    <p class="channelName m-0">NetworkChuck</p>
-                    <span class="viewsNo">349k views</span>
-                    <span> . </span>
-                    <span class="uploadDate">4 days ago</span>
-                </div>
-            </div>
-            <div class="videoCard">
-                <div class="videoThumbnail">
-
-                </div>
-                <div class="videoMediaBody">
-                    <h5 class="videoTitle">We ran OUT of IP Addresses!!</h5>
-                    <p class="channelName m-0">NetworkChuck</p>
-                    <span class="viewsNo">349k views</span>
-                    <span> . </span>
-                    <span class="uploadDate">4 days ago</span>
-                </div>
-            </div>
-            <div class="videoCard">
-                <div class="videoThumbnail">
-
-                </div>
-                <div class="videoMediaBody">
-                    <h5 class="videoTitle">We ran OUT of IP Addresses!!</h5>
-                    <p class="channelName m-0">NetworkChuck</p>
-                    <span class="viewsNo">349k views</span>
-                    <span> . </span>
-                    <span class="uploadDate">4 days ago</span>
-                </div>
-            </div>
-            <div class="videoCard">
-                <div class="videoThumbnail">
-
-                </div>
-                <div class="videoMediaBody">
-                    <h5 class="videoTitle">We ran OUT of IP Addresses!!</h5>
-                    <p class="channelName m-0">NetworkChuck</p>
-                    <span class="viewsNo">349k views</span>
-                    <span> . </span>
-                    <span class="uploadDate">4 days ago</span>
-                </div>
-            </div>
-            <div class="videoCard">
-                <div class="videoThumbnail">
-
-                </div>
-                <div class="videoMediaBody">
-                    <h5 class="videoTitle">We ran OUT of IP Addresses!!</h5>
-                    <p class="channelName m-0">NetworkChuck</p>
-                    <span class="viewsNo">349k views</span>
-                    <span> . </span>
-                    <span class="uploadDate">4 days ago</span>
-                </div>
-            </div>
-            <div class="videoCard">
-                <div class="videoThumbnail">
-
-                </div>
-                <div class="videoMediaBody">
-                    <h5 class="videoTitle">We ran OUT of IP Addresses!!</h5>
-                    <p class="channelName m-0">NetworkChuck</p>
-                    <span class="viewsNo">349k views</span>
-                    <span> . </span>
-                    <span class="uploadDate">4 days ago</span>
-                </div>
-            </div>
-            <div class="videoCard">
-                <div class="videoThumbnail">
-
-                </div>
-                <div class="videoMediaBody">
-                    <h5 class="videoTitle">We ran OUT of IP Addresses!!</h5>
-                    <p class="channelName m-0">NetworkChuck</p>
-                    <span class="viewsNo">349k views</span>
-                    <span> . </span>
-                    <span class="uploadDate">4 days ago</span>
-                </div>
-            </div>
-            <div class="videoCard">
-                <div class="videoThumbnail">
-
-                </div>
-                <div class="videoMediaBody">
-                    <h5 class="videoTitle">We ran OUT of IP Addresses!!</h5>
-                    <p class="channelName m-0">NetworkChuck</p>
-                    <span class="viewsNo">349k views</span>
-                    <span> . </span>
-                    <span class="uploadDate">4 days ago</span>
-                </div>
-            </div>
-            <div class="videoCard">
-                <div class="videoThumbnail">
-
-                </div>
-                <div class="videoMediaBody">
-                    <h5 class="videoTitle">We ran OUT of IP Addresses!!</h5>
-                    <p class="channelName m-0">NetworkChuck</p>
-                    <span class="viewsNo">349k views</span>
-                    <span> . </span>
-                    <span class="uploadDate">4 days ago</span>
+                    <h5 class="videoTitle">We ran OUT of IP Addresses!! We ran OUT of IP Addresses!!We ran OUT of IP Addresses!!</h5>
+                    <p class="channelName m-0 text-muted" style="font-size: 13px;">NetworkChuck</p>
+                    <div class="m-0 text-muted d-flex jusify-content-center align-items-center">
+                        <!-- video view count -->
+                        <span style="font-size: 12px;">1k views</span>
+                        <div class="material-icons mx-1" style="font-size: 4px;">circle</div>
+                        <!-- video published date  -->
+                        <span style="font-size: 12px">4 hours ago</span>
+                    </div>
                 </div>
             </div>
         </div>

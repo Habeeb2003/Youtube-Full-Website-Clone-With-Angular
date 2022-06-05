@@ -1,20 +1,21 @@
 .watchView{
   width: 100%;
   display: flex;
-  margin-top: 30px;
+  font-family: Roboto, Arial, sans-serif;
   .leftSide{
     width: 65%;
-    padding-left: 30px;
-    padding-right: 30px;
+    margin-left: 24px;
+    padding: 24px 24px 0px 0px;
     .videoPlayer{
-      height: 550px;
+      // height: 550px;
+      aspect-ratio: 16 / 9;
       background-color: #E1E1E1;
     }
     .videoDetailsCon{
       padding-top: 20px;
       padding-bottom: 20px;
       border-bottom: 2px solid #E0E0E0;
-      h4{
+      .vidTitle{
         font-weight: 400;
         margin-bottom: 20px;
       }
@@ -27,15 +28,21 @@
         .actionsDiv{
           display: flex;
           align-items: center;
-          font-size: 19px;
+          font-size: 12px;
           div{
-            margin-left: 30px;
+            margin-left: 20px;
             display: flex;
             align-items: center;
           }
           span.action{
             font-weight: 450;
             margin-left: 10px;
+          }
+          .actionBtn{
+            cursor: pointer;
+          }
+          .ico{
+            font-size: 18px;
           }
         }
       }
@@ -59,8 +66,8 @@
           padding-left: 20px;
           padding-right: 10px;
           .description{
-            font-size: 19px;
-            font-family: Roboto, Arial, sans-serif;;
+            font-size: 15px;
+            
           }
         }
         .subscribeBtnDiv{
@@ -70,8 +77,8 @@
             color: white;
             border: none;
             outline: none;
-            font-weight: 500;
-            font-size: 20px;
+            font-weight: 450;
+            font-size: 17px;
             padding: 9px 20px;
           }
         }
@@ -80,22 +87,38 @@
   }
   .rightSide{
     width: 35%;
+    padding: 24px 24px 0px 0px;
     .relatedVideos{
       width: 100%;
       .videoCard{
         width: 100%;
-        height: 130px;
+        // height: 130px;
         display: flex;
         margin-bottom: 10px;
         .videoThumbnail{
           width: 40%;
           height: 100%;
+          aspect-ratio: 15 / 9;
           background-color: #E1E1E1;
         }
         .videoMediaBody{
           width: 60%;
           height: 100%;
-          padding-left: 10px;
+          padding: 0px 24px 0px 10px;
+          .videoTitle{
+            font-size: 14px !important;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            overflow: hidden; 
+            -webkit-box-orient: vertical;
+          }
+          .channelName{
+            font-size: 14px !important;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            overflow: hidden; 
+            -webkit-box-orient: vertical;
+          }
         }
       }
     }

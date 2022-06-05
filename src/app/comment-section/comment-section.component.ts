@@ -7,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CommentSectionComponent implements OnInit {
 
+  comments = [
+    {},{},{},{},{},{},{}
+  ]
+
   constructor() { }
 
   ngOnInit(): void {

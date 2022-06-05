@@ -7,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WatchComponent implements OnInit {
 
+  relatedVideos = [
+    {},{},{},{},{},{},{},{},{},{}
+  ] 
+
   constructor() { }
 
   ngOnInit(): void {
