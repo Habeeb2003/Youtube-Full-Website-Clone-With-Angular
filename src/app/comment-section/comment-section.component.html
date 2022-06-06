@@ -1,7 +1,7 @@
 <section class="commentSection">
     <div class="heading">
         <div>
-            <p>525 Comments</p>
+            <p class="totalCommentNo">525 Comments</p>
         </div>
         <div>
 
@@ -17,15 +17,22 @@
     </div>
     <div class="commentsCon">
         <div class="comment position-relative" *ngFor="let comment of comments">
+            
+            <!-- comment avatar -->
             <div class="commentAvatar">
 
             </div>
+
+            <!-- comment details -->
             <div class="commentDetails">
                 <div style="margin-bottom: 10px;">
                     <span class="commentName">Kanu Gamer </span>
-                    <span class="commentTime">9 hours ago</span>
+                    <span class="commentTime ml-1 text-muted">9 hours ago</span>
                 </div>
+                <!-- comment content -->
                 <p class="commentText">Best os for 2gb ram intel core 2 duo for smooth performance Best os for 2gb ram intel core 2 duo for smooth performance Best os for 2gb ram intel core 2 duo for smooth performance Best os for 2gb ram intel core 2 duo for smooth performance</p>
+
+                <!-- action that can be performed on comment -->
                 <div class="d-flex commentAction">
                     <div class="d-flex align-items-center">
                         <span class="material-icons-outlined ico">&#xe8dc;</span>
@@ -37,7 +44,57 @@
                     <!-- <i style="display: none;" class="material-icons"></i> -->
                     <button class="replyBtn" style="color: #606060;">REPLY</button>
                 </div>
+                <div>
+
+                    <!-- view more replies btn -->
+                    <div (click)="fetchReplies()" class="d-flex mt-2 align-items-center viewMoreReplies">
+                        <i class="material-icons ico">arrow_drop_down</i>
+                        <h6 class="m-0">View 2 replies</h6>
+                    </div>
+
+                    <!-- replies container -->
+                    <div class="replies">
+                        <div class="reply position-relative" *ngFor="let reply of replies">
+
+                            <!-- reply avatar -->
+                            <div class="replyAvatar">
+                
+                            </div>
+
+                            <!-- reply details -->
+                            <div class="replyDetails">
+                                <div style="margin-bottom: 10px;">
+                                    <span class="replyName">Kanu Gamer </span>
+                                    <span class="replyTime ml-1 text-muted">9 hours ago</span>
+                                </div>
+
+                                <!-- reply content -->
+                                <p class="replyText">Best os for 2gb ram intel core 2 duo for smooth performance Best os for 2gb ram intel core 2 duo for smooth performance Best os for 2gb ram intel core 2 duo for smooth performance Best os for 2gb ram intel core 2 duo for smooth performance</p>
+
+                                <!-- action that can be performed on reply -->
+                                <div class="d-flex replyAction">
+                                    <div class="d-flex align-items-center">
+                                        <span class="material-icons-outlined ico">&#xe8dc;</span>
+                                        <span class="ml-2" style="color: #606060;">2.2k</span>
+                                    </div>
+                                    <div>
+                                        <i class="material-icons-outlined ico">&#xe8db;</i>
+                                    </div>
+                                    <!-- <i style="display: none;" class="material-icons"></i> -->
+                                    <button class="replyBtn" style="color: #606060;">REPLY</button>
+                                </div>
+                            </div>
+
+                            <!-- reply menu btn -->
+                            <div class="position-absolute" style="width: 40px; height: 40px; right: 0; top: 0;">
+                                <button class="material-icons replyMenuBtn">&#xe5d4;</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+
+            <!-- comment menu btn -->
             <div class="position-absolute" style="width: 40px; height: 40px; right: 0; top: 0;">
                 <button class="material-icons menuBtn">&#xe5d4;</button>
             </div>

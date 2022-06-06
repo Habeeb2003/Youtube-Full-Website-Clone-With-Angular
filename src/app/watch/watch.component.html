@@ -75,7 +75,7 @@
     </div>
     <div class="rightSide">
         <div class="relatedVideos">
-            <div class="videoCard" *ngFor="let video of relatedVideos">
+            <div class="videoCard position-relative" *ngFor="let video of relatedVideos">
                 <div class="videoThumbnail">
 
                 </div>
@@ -89,6 +89,9 @@
                         <!-- video published date  -->
                         <span style="font-size: 12px">4 hours ago</span>
                     </div>
+                </div>
+                <div class="position-absolute" style="right: 0; top: 0;">
+                    <button class="material-icons menuBtn">&#xe5d4;</button>
                 </div>
             </div>
         </div>

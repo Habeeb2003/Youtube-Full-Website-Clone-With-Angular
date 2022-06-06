@@ -10,10 +10,18 @@ export class CommentSectionComponent implements OnInit {
   comments = [
     {},{},{},{},{},{},{}
   ]
+  
+  replies = [
+    {},{}
+  ]
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  fetchReplies(){
+    
   }
 
 }

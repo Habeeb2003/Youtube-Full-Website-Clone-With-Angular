@@ -6,7 +6,8 @@ section.commentSection{
         width: 100%;
         padding: 20px 0px 20px 0px;
         p{
-            font-size: 25px;
+            font-size: 16px;
+            line-height: 22px;
         }
     }
     .commentPublicly{
@@ -46,16 +47,21 @@ section.commentSection{
             .commentDetails{
                 // width: calc(100% - 60px);
                 margin-left: 20px;
-                padding-right: 60px;
+                
+                // padding-right: 60px;
                 .commentName{
-                    font-weight: 700;
+                    font-weight: 500;
+                    font-size: 13px;
+                    line-height: 18px;
                 }
                 .commentTime{
                     color: #030303;
-                    
+                    font-size: 12px;
                 }
                 .commentText{
-                    font-size: 13px;
+                    font-size: 14px;
+                    line-height: 20px;
+                    width: calc(100% - 50px);
                 }
                 .replyBtn{
                     border: none;
@@ -69,6 +75,14 @@ section.commentSection{
                         font-size: 16px;
                     }
                 }
+                .viewMoreReplies{
+                    gap: 7px;
+                    color: #065FD4;
+                    cursor: pointer;
+                    h6{
+                        font-size: 14px;
+                    }
+                }
             }
             .menuBtn{
                 border: none;
@@ -78,6 +92,66 @@ section.commentSection{
             }
         }
         .comment:hover .menuBtn{
+            display: inline;
+        }
+    }
+    .replies{
+        width: 100%;
+        .reply{
+            width: 100%;
+            display: flex;
+            margin: 10px 0;
+            .replyAvatar{
+                width: 25px;
+                height: 25px;
+                border-radius: 100%;
+                background-color: lightgrey;
+                flex-shrink: 0;
+            }
+            .replyDetails{
+                // width: calc(100% - 60px);
+                margin-left: 20px;
+                .replyName{
+                    font-weight: 500;
+                    font-size: 13px;
+                    line-height: 18px;
+                }
+                .replyTime{
+                    color: #030303;
+                    font-size: 12px;
+                }
+                .replyText{
+                    font-size: 14px;
+                    width: calc(100% - 50px);
+                }
+                .replyBtn{
+                    border: none;
+                    outline: none;
+                    background: transparent;
+                }
+                .replyAction{
+                    font-size: 13px;
+                    gap: 24px;
+                    .ico{
+                        font-size: 16px;
+                    }
+                }
+                .viewMoreReplies{
+                    gap: 7px;
+                    color: #065FD4;
+                    h6{
+                        font-size: 14px;
+                    }
+                }
+            }
+            .replyMenuBtn{
+                border: none;
+                outline: none;
+                background-color: transparent;
+                display: none;
+            }
+        }
+        .reply:hover .replyMenuBtn{
             display: inline;
         }
     }

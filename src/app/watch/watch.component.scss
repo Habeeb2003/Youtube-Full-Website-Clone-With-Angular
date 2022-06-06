@@ -100,11 +100,14 @@
           height: 100%;
           aspect-ratio: 15 / 9;
           background-color: #E1E1E1;
+          cursor: pointer;
         }
         .videoMediaBody{
           width: 60%;
           height: 100%;
-          padding: 0px 24px 0px 10px;
+          padding: 0px 24px 0px 0px;
+          margin-left: 10px;
+          cursor: pointer;
           .videoTitle{
             font-size: 14px !important;
             display: -webkit-box;
@@ -120,6 +123,16 @@
             -webkit-box-orient: vertical;
           }
         }
+        .menuBtn{
+          display: none;
+          border: none;
+          outline: none;
+          background-color: transparent;
+          padding: 0;
+        }
+      }
+      .videoCard:hover .menuBtn{
+        display: block;
       }
     }
   }
