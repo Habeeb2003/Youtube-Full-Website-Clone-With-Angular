@@ -4,9 +4,9 @@
     <mat-drawer #drawer [mode]="'over'">
         <div class="">
             <div class="leftTopNav d-flex align-items-center">
-                <span  (click)="drawer.toggle()" class="navToggleBtn mr-5 d-flex justify-content-center align-items-center"><span class="material-icons">&#xe5d2;</span></span>
+                <span  (click)="drawer.toggle()" class="navToggleBtn d-flex justify-content-center align-items-center"><span class="material-icons">&#xe5d2;</span></span>
                 <a class="navbar-brand"  style="width: 120px;">
-                    <img src="../../assets/images/youtube-logo.png" style="width: 150px;" alt="logo">
+                    <img src="../../assets/images/youtube-logo.png" style="width: 90px;" alt="logo">
                 </a>
             </div>
             <ul class="drawerViews pl-0 pt-3">
@@ -35,7 +35,7 @@
                     </a>
                 </li>
             </ul>
-            <ul class="drawerViews pl-0 pt-3">
+            <ul class="drawerViews pl-0">
                 <li class="d-flex align-items-center">
                     <a href="" class="">
                         <i class="material-icons-outlined">&#xe04a;</i>
@@ -61,7 +61,7 @@
                     </a>
                 </li>
             </ul>
-            <div *ngIf="!userIsSignedIn" class="pl-5 " style="font-size: 19px;">
+            <div *ngIf="!userIsSignedIn" class="pl-5 " style="font-size: 15px;">
                 <p>Sign in to like videos, comment and subscribe</p>
                 <button *ngIf="!userIsSignedIn" class="signInBtn"><span class="material-icons">&#xe853;</span><b>SIGN IN</b></button>
             </div>
@@ -72,23 +72,26 @@
             <div class="leftTopNav d-flex align-items-center">
                 <span  (click)="drawer.toggle()" class="navToggleBtn d-flex justify-content-center align-items-center"><span class="material-icons">&#xe5d2;</span></span>
                 <a class="navbar-brand">
-                    <img src="../../assets/images/youtube-logo.png" style="width: 120px;"alt="">
+                    <img src="../../assets/images/youtube-logo.png" style="width: 90px;"alt="">
                 </a>
             </div>
             <div class="centerTopNav">
-                <div class="searchIconDiv d-flex justify-content-center align-items-center">
-                    <span class="material-icons ">&#xe8b6;</span>
+                
+                <div class="position-relative d-flex">
+                    <div class="searchIconDiv d-flex justify-content-center align-items-center">
+                        <span class="material-icons ">&#xe8b6;</span>
+                    </div>
+                    <input class="navSearch" type="text" (focus)="inputFocus($event)" (blur)="inputBlur($event)" #searchInput placeholder="Search" name="" id="">
+                    <span *ngIf="searchInput.value != ''" class="material-icons" style="position: absolute; right: 10px; top: 10px;" (click)="searchInput.value = ''">&#xe14c;</span>
                 </div>
-                <input class="navSearch" type="text" (focus)="inputFocus($event)" (blur)="inputBlur($event)" #searchInput placeholder="Search" name="" id="">
                 <button class="searchBtn"><span class="material-icons">&#xe8b6;</span></button>
-                <span *ngIf="searchInput.value != ''" class="material-icons" style="position: relative; left: -95px" (click)="searchInput.value = ''">&#xe14c;</span>
-                <span class="material-icons">&#xe029;</span>
+                <span class="material-icons micBtn">&#xe029;</span>
             </div>
             <div class="rightTopNav">
                 <span class="youtubeAppsBtn material-icons"><span>&#xe5c3;</span></span>
                 <span class="navMenuBtn material-icons"><span>&#xe5d4;</span></span>
                 <button *ngIf="userIsSignedIn" onclick="" class="createVideo material-icons"><span>&#xe070;</span></button>
-                <button *ngIf="!userIsSignedIn" class="signInBtn" style="font-size: 18px;"><span class="material-icons-outlined mr-2">&#xe853;</span>SIGN IN</button>
+                <button *ngIf="!userIsSignedIn" class="signInBtn" style="font-size: 15px;"><span class="material-icons-outlined mr-2">&#xe853;</span>SIGN IN</button>
             </div>
         </nav>
         <div class="afterNavbar">

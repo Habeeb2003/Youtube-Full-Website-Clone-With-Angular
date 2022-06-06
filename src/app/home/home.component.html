@@ -29,7 +29,7 @@
                     <!-- video card info -->
                     <div class="videoMediaBody pt-3 d-flex position-relative">
                         <!-- channel thumbnail -->
-                        <a [routerLink]="['watch']" [queryParams]="{v: video.snippet?.channelId}" style="height: fit-content;">
+                        <a [routerLink]="['channel']" [queryParams]="{v: video.snippet?.channelId}" style="height: fit-content;">
                             <div style="min-width: 36px; height: 36px; overflow: hidden; border-radius: 22px;">
                                 <img src="{{video.channelThumbnail}}" style="width: 100%; height: 100%;" alt="">
                             </div>

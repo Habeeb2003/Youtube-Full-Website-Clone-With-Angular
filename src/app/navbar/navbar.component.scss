@@ -7,10 +7,12 @@ body{
 nav{
     width: 100%;
     height: 8vh;
-    border-bottom: 2px solid lightgray;
+    font-family: roboto, Arial, sans-serif;
+    // border-bottom: 2px solid lightgray;
     .leftTopNav{
         width: 15%;
         justify-content: space-evenly;
+        gap: 24px;
         .navToggleBtn{
             width: 45px;
             height: 45px;
@@ -25,27 +27,50 @@ nav{
             height: 45px;
             border: 1px solid #1037b9;
             border-right: none;
+            border-right: none;
             visibility: hidden;
         }
         .navSearch{
             outline: none;
-            width: 600px;
-            height: 45px;
-            font-size: 22px;
-            padding-left: 4px;
+            width: 500px;
+            // height: 45px;
+            font-size: 18px;
+            padding: 7px 4px;
+            border: 1px solid #CCCCCC;
+        }
+        .navSearch:focus{
+            outline: 1px solid #1037b9;
+            border: 1px solid gray;
+            border-left: none;
+            border: none;
+            
         }
         .searchBtn{
             min-width: 60px;
             min-height: 45px;
             outline: none;
-            border: 1px solid grey;
+            border: 1px solid #CCCCCC;
+            background: #f5f5f5;
+        }
+        .searchBtn:hover{
+            background: #F0F0F0;
+        }
+        .micBtn{
+            width: 45px;
+            height: 45px;
+            margin-left: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
         }
     }
     .rightTopNav{
-        width: 15vw;
+        // width: 15vw;
         display: flex;
         justify-content: space-between;
         align-items: center;
+        gap: 8px;
         .youtubeAppsBtn, .navMenuBtn{
             width: 45px;
             height: 45px;
@@ -53,16 +78,19 @@ nav{
             display: flex;
             align-items: center;
             justify-content: center;
+            cursor: pointer;
         }
         .signInBtn{
-            width: 120px;
-            height: 45px;
-            color: #1037b9;
-            border: 1px solid #1037b9;
+            // width: 120px;
+            // height: 45px;
+            color: #4972f8;
+            border: 1px solid #4972f8;
             background-color: transparent;
             display: flex;
             justify-content: center;
             align-items: center;
+            width: max-content;
+            padding: 5px 10px;
         }
     }
 }
@@ -72,6 +100,7 @@ nav{
     top: 0;
     left: 0;
     right: 0;
+    overflow-x: hidden !important;
 }
   
 mat-drawer-content {
@@ -93,19 +122,21 @@ mat-drawer{
     width: 19vw;
     .leftTopNav{
         height: 65px;
-        padding-left: 35px;
+        padding-left: 24px;
+        gap: 24px;
         .navToggleBtn{
             width: 40px;
             height: 40px;
         }
     }
     .drawerViews{
-        padding-bottom: 20px;
+        padding-bottom: 15px;
         border-bottom: 2px solid lightgrey;
         li{
             width: 100%;
-            height: 50px;
-            font-size: 19px;
+            // height: 0px;
+            // font-size: 19px;
+            padding: 7px;
             color: black;
             padding-left: 30px;
             a{
@@ -117,8 +148,11 @@ mat-drawer{
                 border: none;
                 outline: none;
                 i{
-                    font-size: 30px;
-                    margin-right: 30px;
+                    font-size: 24px;
+                    margin-right: 24px;
+                }
+                span{
+                    font-size: 15px;
                 }
             }
         }
@@ -133,13 +167,13 @@ mat-drawer{
         }
     }
     .signInBtn{
-        width: 120px;
-        height: 45px;
-        color: #1037b9;
-        border: 1px solid #1037b9;
+        color: #4972f8;
+        border: 1px solid #4972f8;
         background-color: transparent;
         display: flex;
         justify-content: center;
         align-items: center;
+        width: max-content;
+        padding: 5px 10px;
     }
 }

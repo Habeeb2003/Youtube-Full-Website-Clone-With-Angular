@@ -1,6 +1,7 @@
 
 import {MediaMatcher} from '@angular/cdk/layout';
-import {ChangeDetectorRef, Component, OnDestroy} from '@angular/core';
+import {ChangeDetectorRef, Component, OnDestroy, OnInit} from '@angular/core';
+import { GoogleSiginService } from '../google-sigin.service';
 
 /** @title Responsive sidenav */
 @Component({
@@ -8,7 +9,9 @@ import {ChangeDetectorRef, Component, OnDestroy} from '@angular/core';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss']
 })
-export class NavbarComponent implements OnDestroy {
+export class NavbarComponent implements OnDestroy, OnInit {
+
+  user : gapi.auth2.GoogleUser | null
 
   userIsSignedIn: boolean = false;
 
@@ -30,10 +33,25 @@ export class NavbarComponent implements OnDestroy {
 
   private _mobileQueryListener: () => void;
 
-  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {
+  constructor( private changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
+  }
+
+  ngOnInit(): void {
+    // this.signInService.observable().subscribe( user => {
+    //   this.user = user
+    //   this.changeDetectorRef.detectChanges() // ////////////
+    // })
+  }
+
+  signIn(){
+    // this.signInService.signIn()
+  }
+
+  signOut(){
+    // this.signInService.signOut()
   }
 
   ngOnDestroy(): void {
@@ -41,11 +59,11 @@ export class NavbarComponent implements OnDestroy {
   }
 
   inputFocus(e:any): void {
-    e.target.style.borderLeft = "none"
+    // e.target.style.borderLeft = "none"
     e.target.previousSibling.style.visibility = "visible";
   }
   inputBlur(e:any): void{
-    e.target.style.borderLeft = "2px solid black"
+    // e.target.style.borderLeft = "2px solid black"
     e.target.previousSibling.style.visibility = "hidden";
   }
 
