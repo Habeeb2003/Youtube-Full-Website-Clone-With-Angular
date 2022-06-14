@@ -81,10 +81,10 @@
                     <div class="searchIconDiv d-flex justify-content-center align-items-center">
                         <span class="material-icons ">&#xe8b6;</span>
                     </div>
-                    <input class="navSearch" type="text" (focus)="inputFocus($event)" (blur)="inputBlur($event)" #searchInput placeholder="Search" name="" id="">
+                    <input class="navSearch" type="text" (keyup)="searchWithEnterKey($event)" (focus)="inputFocus($event)" (blur)="inputBlur($event)" #searchInput placeholder="Search" name="" id="">
                     <span *ngIf="searchInput.value != ''" class="material-icons" style="position: absolute; right: 10px; top: 10px;" (click)="searchInput.value = ''">&#xe14c;</span>
                 </div>
-                <button class="searchBtn"><span class="material-icons">&#xe8b6;</span></button>
+                <button class="searchBtn" (click)="searchBtn({filter: 'q', value: searchInput.value})"><span class="material-icons">&#xe8b6;</span></button>
                 <span class="material-icons micBtn">&#xe029;</span>
             </div>
             <div class="rightTopNav">

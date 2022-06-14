@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -25,6 +25,24 @@ import { CommentSectionComponent } from './comment-section/comment-section.compo
 import { RelatedVideosSectionComponent } from './related-videos-section/related-videos-section.component';
 import { ResultsComponent } from './results/results.component';
 import { MiniSideNavComponent } from './mini-side-nav/mini-side-nav.component';
+import { ChannelComponent } from './channel/channel.component';
+
+function initializeYoutubeService(): Promise<any>{
+  return (new Promise((resolve, reject) => gapi.load('client', () => {
+      gapi.client.init({
+        apiKey: "AIzaSyC8nhcuvQDfbipM6yK_bCclfnfyL_cwTno",
+        clientId: "900118353356-hc2rv9rnvedf54o5tp1bg1fdu1a0rots.apps.googleusercontent.com",
+        discoveryDocs: ['https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest'],
+        scope: "https://www.googleapis.com/auth/youtube.readonly"
+        })
+        .then(() => {
+          console.log("gapi initialized")
+          resolve(gapi.client)
+        })
+      })
+    )
+  )
+}
 
 @NgModule({
   declarations: [
@@ -36,7 +54,8 @@ import { MiniSideNavComponent } from './mini-side-nav/mini-side-nav.component';
     CommentSectionComponent,
     RelatedVideosSectionComponent,
     ResultsComponent,
-    MiniSideNavComponent
+    MiniSideNavComponent,
+    ChannelComponent
   ],
   imports: [
     BrowserModule,
@@ -54,7 +73,11 @@ import { MiniSideNavComponent } from './mini-side-nav/mini-side-nav.component';
     MatListModule,
     MaterialExampleModule
   ],
-  providers: [],
+  providers: [{
+    provide: APP_INITIALIZER,
+    useFactory: () => initializeYoutubeService,
+    multi: true
+}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

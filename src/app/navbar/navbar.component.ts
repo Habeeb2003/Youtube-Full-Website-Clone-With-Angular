@@ -1,7 +1,13 @@
 
 import {MediaMatcher} from '@angular/cdk/layout';
 import {ChangeDetectorRef, Component, OnDestroy, OnInit} from '@angular/core';
+import { Subscription } from 'rxjs';
+import { converTime, filterType, searchResult, searchResultInterface, timeSince, viewsFormatter } from '../app.component';
 import { GoogleSiginService } from '../google-sigin.service';
+import { SearchResultService } from '../search-result.service';
+import { YoutubeService } from '../youtube.service';
+
+
 
 /** @title Responsive sidenav */
 @Component({
@@ -21,6 +27,8 @@ export class NavbarComponent implements OnDestroy, OnInit {
 
   fillerNav = Array.from({length: 50}, (_, i) => `Nav Item ${i + 1}`);
 
+  filters: searchResultInterface
+
   fillerContent = Array.from(
     {length: 50},
     () =>
@@ -33,17 +41,21 @@ export class NavbarComponent implements OnDestroy, OnInit {
 
   private _mobileQueryListener: () => void;
 
-  constructor( private changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {
+  result : searchResult[] | undefined
+
+  resultSubscription : Subscription
+
+  filterSubscription : Subscription
+
+  constructor( private changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, private youtubeService: YoutubeService, private resultService : SearchResultService) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
   }
 
   ngOnInit(): void {
-    // this.signInService.observable().subscribe( user => {
-    //   this.user = user
-    //   this.changeDetectorRef.detectChanges() // ////////////
-    // })
+    this.resultSubscription = this.resultService.currentResult.subscribe(result => this.result = result)
+    this.filterSubscription = this.resultService.currentFilter.subscribe(filters => this.filters = filters)
   }
 
   signIn(){
@@ -57,6 +69,50 @@ export class NavbarComponent implements OnDestroy, OnInit {
   ngOnDestroy(): void {
     this.mobileQuery.removeListener(this._mobileQueryListener);
   }
+
+  searchWithEnterKey(e: KeyboardEvent) : void{
+    if(e.key == "Enter"){
+      const query = (e.target as HTMLInputElement).value
+      this.resultService.changeFilters([{filter : "q", value: query}])
+    }
+  }
+  searchBtn(filter: filterType){
+    this.resultService.changeFilters([filter])
+  }
+
+  // ytSearch(filter: filterType) : void{
+  
+  //   this.resultService.changeFilters(filter)
+    
+    
+  //   this.youtubeService.searchByKeyword(this.filters).then(response => {
+  //     // console.log(response);
+  //     response.items!.map((item: searchResult) => {
+  //       this.youtubeService.getChannelThumbnail(item.snippet?.channelId!).then(res => {
+  //         item.channelThumbnail = res.items![0].snippet?.thumbnails?.high?.url
+  //         // console.log("thumbnail",item);
+          
+  //       })
+  //       if (item.id?.kind == "youtube#video") {
+  //         this.youtubeService.getVideoStatistics(item.id.videoId!).then(res => {
+            
+  //           item.snippet!.publishedAt = timeSince(new Date(res.items![0].snippet?.publishedAt as unknown as string))
+  //           item.viewCount = viewsFormatter(Number(res.items![0].statistics?.viewCount)).toString()
+  //           item.duration = converTime(res.items![0].contentDetails!.duration!.toString())
+  //           // console.log("vid", item);
+            
+  //         })
+  //       }
+  //     })
+  //     this.resultService.updateResult(response.items)
+  //   })
+  // }
+
+  /* optimise this function later */
+  // changeFilters<K extends keyof searchResultInterface>(parameter: { filter: K, value: searchResultInterface[K] }){
+  //   this.filters[parameter.filter] = parameter.value
+  //   this.resultService.updateFilter(this.filters)
+  // }
 
   inputFocus(e:any): void {
     // e.target.style.borderLeft = "none"

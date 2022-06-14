@@ -1,164 +1,222 @@
 <div class="result_con d-flex">
     <app-mini-side-nav></app-mini-side-nav>
     <div class="resultAreaView px-5">
-        <div class="filterCon border-bottom pt-3 pb-3">
-            <button class="filterBtn pl-0 d-flex align-items-center" (click)="toggleFilterDropdown()" type="button" data-toggle="tooltip" data-placement="bottom" title="Open search filters"><span class="material-icons mr-2">tune</span><span> FILTERS</span></button>
-            <div *ngIf="open" class="container-fluid mt-4" >
-                <div class="row">
+        <div class="filterCon border-bottom pt-3 pb-2">
+            <button matRipple [matRippleCentered]="true" [ngClass]="open ? 'text-dark': ''" class="filterBtn pl-0 d-flex align-items-center" (click)="toggleFilterDropdown()" type="button" data-toggle="tooltip" data-placement="bottom" title="Open search filters"><span class="material-icons mr-2">tune</span><span class="text"> FILTERS</span></button>
+            <div [ngClass]="open == false ? 'closed': ''" class="container-fluid filters" >
+                <div class="row pt-4">
                     <div class="col">
                         <div class="pb-3 border-bottom">
-                            <h6>UPLOAD DATE</h6>
+                            <h6 class="filtHead">UPLOAD DATE</h6>
                         </div>
                         <ul>
-                            <li>Last hour</li>
-                            <li>Today</li>
-                            <li>This week</li>
-                            <li>This month</li>
-                            <li>This year</li>
+
+                            <li class="filt" (click)="filterSearch([{filter: 'type', value: 'video'}])"><span>Last hour</span> <span class="material-icons close_icon">clear</span></li>
+
+                            <li class="filt" (click)="filterSearch([{filter: 'type', value: 'video'}])">Today <span class="material-icons close_icon">clear</span></li>
+
+                            <li class="filt" (click)="filterSearch([{filter: 'type', value: 'video'}])">This week <span class="material-icons close_icon">clear</span></li>
+
+                            <li class="filt" (click)="filterSearch([{filter: 'type', value: 'video'}])">This month <span class="material-icons close_icon">clear</span></li>
+
+                            <li class="filt" (click)="filterSearch([{filter: 'type', value: 'video'}])">This year <span class="material-icons close_icon">clear</span></li>
+
                         </ul>
                     </div>
                     <div class="col">
                         <div class="pb-3 border-bottom">
-                            <h6>TYPE</h6>
+                            <h6 class="filtHead">TYPE</h6>
                         </div>
                         <ul>
-                            <li>Video</li>
-                            <li>Channel</li>
-                            <li>Playlist</li>
-                            <li>Film</li>
+
+                            <li class="filt" [ngClass]="(filters.type == 'video' ? 'active' : '')" (click)="filterSearch([{filter: 'type', value: (checkIfActive($event) ? undefined : 'video')}])">Video <span class="material-icons close_icon">clear</span></li>
+
+                            <li class="filt" [ngClass]="(filters.type == 'video' ? 'disabled' : '')"  (click)="filterSearch([{filter: 'type', value: (checkIfActive($event) ? undefined : 'channel')}])">Channel <span class="material-icons close_icon">clear</span></li>
+
+                            <li class="filt" [ngClass]="(filters.type == 'video' ? 'disabled' : '')" (click)="filterSearch([{filter: 'type', value: (checkIfActive($event) ? undefined : 'playlist')}])">Playlist <span class="material-icons close_icon">clear</span></li>
+
+                            <li class="filt" [ngClass]="(filters.videoType == 'movie' ? 'active' : '')" (click)="filterSearch([{filter: 'videoType', value: (checkIfActive($event) ? undefined : 'movie')}])">Film <span class="material-icons close_icon">clear</span></li>
+
                         </ul>
                     </div>
                     <div class="col">
                         <div class="pb-3 border-bottom">
-                            <h6>DURATION</h6>
+                            <h6 class="filtHead">DURATION</h6>
                         </div>
                         <ul>
-                            <li>Under 4 minutes</li>
-                            <li>4-20 minutes</li>
-                            <li>Over 20 minutes</li>
+                            
+                            <li class="filt" [ngClass]="(filters.videoDuration == 'short' ? 'active' : '')" (click)="filterSearch([{filter: 'videoDuration', value: (checkIfActive($event) ? undefined : 'short')}, forDurations[0], forDurations[1]])">Under 4 minutes <span class="material-icons close_icon">clear</span></li>
+
+                            <li class="filt" [ngClass]="(filters.videoDuration == 'medium' ? 'active' : '')" (click)="filterSearch([{filter: 'videoDuration', value: (checkIfActive($event) ? undefined : 'medium')}, forDurations[0], forDurations[1]])">4-20 minutes <span class="material-icons close_icon">clear</span></li>
+
+                            <li class="filt" [ngClass]="(filters.videoDuration == 'long' ? 'active' : '')" (click)="filterSearch([{filter: 'videoDuration', value: (checkIfActive($event) ? undefined : 'long')}, forDurations[0], forDurations[1]])">Over 20 minutes <span class="material-icons close_icon">clear</span></li>
+
                         </ul>
                     </div>
                     <div class="col">
                         <div class="pb-3 border-bottom">
-                            <h6>FEATURES</h6>
+                            <h6 class="filtHead">FEATURES</h6>
                         </div>
                         <ul>
-                            <li>Live</li>
-                            <li>4K</li>
-                            <li>HD</li>
-                            <li>Subtitles/CC</li>
-                            <li>Creative Commons</li>
-                            <li>360</li>
-                            <li>VR180</li>
-                            <li>3D</li>
-                            <li>HDR</li>
-                            <li>Location</li>
-                            <li>Purchased</li>
+
+                            <li class="filt" [ngClass]="(filters.eventType == 'live' ? 'active' : '')" (click)="filterSearch([{filter: 'eventType', value: (checkIfActive($event) ? undefined : 'live')}, videoFilter]) ">Live <span class="material-icons close_icon">clear</span></li>
+
+                            <li class="filt" (click)="filterSearch([{filter: 'type', value: 'video'}, videoFilter])">4K <span class="material-icons close_icon">clear</span></li>
+
+                            <li class="filt" [ngClass]="(filters.videoDefinition == 'high' ? 'active' : '')" (click)="filterSearch([{filter: 'videoDefinition', value: (checkIfActive($event) ? undefined : 'high')}, videoFilter])">HD <span class="material-icons close_icon">clear</span></li>
+
+                            <li class="filt" [ngClass]="(filters.videoCaption == 'closedCaption' ? 'active' : '')"(click)="filterSearch([{filter: 'videoCaption', value: (checkIfActive($event) ? undefined : 'closedCaption')}, videoFilter])">Subtitles/CC <span class="material-icons close_icon">clear</span></li>
+
+                            <li class="filt" [ngClass]="(filters.videoLicense == 'creativeCommon' ? 'active' : '')" (click)="filterSearch([{filter: 'videoLicense', value: (checkIfActive($event) ? undefined : 'creativeCommon')}, videoFilter])">Creative Commons <span class="material-icons close_icon">clear</span></li>
+                            
+                            <li class="filt" (click)="filterSearch([{filter: 'type', value: 'video'}])">360 <span class="material-icons close_icon">clear</span></li>
+
+                            <li class="filt" (click)="filterSearch([{filter: 'type', value: 'video'}])">VR180 <span class="material-icons close_icon">clear</span></li>
+                            
+                            <li class="filt" [ngClass]="(filters.videoDimension == '3d' ? 'active' : '')" (click)="filterSearch([{filter: 'videoDimension', value: (checkIfActive($event) ? undefined : '3d')}, videoFilter])">3D <span class="material-icons close_icon">clear</span></li>
+
+                            <li class="filt" (click)="filterSearch([{filter: 'type', value: 'video'}])">HDR <span class="material-icons close_icon">clear</span></li>
+
+                            <li class="filt" (click)="filterSearch([{filter: 'type', value: 'video'}])">Location <span class="material-icons close_icon">clear</span></li>
+
+                            <li class="filt" (click)="filterSearch([{filter: 'type', value: 'video'}])">Purchased <span class="material-icons close_icon">clear</span></li>
+
                         </ul>
                     </div>
                     <div class="col">
                         <div class="pb-3 border-bottom">
-                            <h6>SORT BY</h6>
+                            <h6 class="filtHead">SORT BY</h6>
                         </div>
                         <ul>
-                            <li>Relevance</li>
-                            <li>Upload date</li>
-                            <li>View count</li>
-                            <li>Rating</li>
+
+                            <li class="filt" [ngClass]="(filters.order == 'relevance' || filters.order == undefined) ? 'active': '' " (click)="filterSearch([{filter: 'order', value: 'relevance'}])">Relevance</li>
+
+                            <li class="filt" [ngClass]="filters.order == 'date' ? 'active': '' " (click)="filterSearch([{filter: 'order', value: 'date'}])">Upload date</li>
+
+                            <li class="filt" [ngClass]="filters.order == 'viewCount' ? 'active': '' " (click)="filterSearch([{filter: 'order', value: 'viewCount'}])">View count</li>
+
+                            <li class="filt" [ngClass]="filters.order == 'rating' ? 'active': '' " (click)="filterSearch([{filter: 'order', value: 'rating'}])">Rating</li>
+
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
+
+        <!-- result container -->
         <div class="resultsCon px-0 container">
-            <div class="result d-flex my-3">
-                <div class="resultThumbnail">
-                    <img class="img-fluid" src="" alt="">
-                </div>
-                <div class="resultDetails pl-3 pt-2">
-                    <div class="resultTitle">
-                        <h5>React Hooks Course - All React Hooks Explained</h5>
+
+            <div *ngFor="let result of results">
+                
+                <ng-template [ngIf]="result.id?.kind == 'youtube#video'">
+                <!-- a video result -->
+                    <div class="result_video d-flex my-3" >
+                        <!-- <div class="resultThumbnail">
+                            <img class="img-fluid" src="" alt="">
+                        </div> -->
+                        <div class="position-relative">
+                            <div class="resultThumbnail" style="background: url({{result.snippet?.thumbnails?.high?.url}});">
+                                <!-- <img [src]="result.snippet?.thumbnails?.high?.url" style="width: 100%; height: 100%; background-position: center; background-repeat: no-repeat; background-size: cover;" alt=""> -->
+                            </div>
+                            <!-- video duration -->
+                            <div class="duration position-absolute text-white" style="right: 3px; bottom: 3px; padding: 0px 2px 0px 2px; background-color: black; font-family: roboto; font-size: 12px; font-weight: 600;">
+                                <p class="mb-0">{{result.duration}}</p>
+                            </div>
+                        </div>
+                        <div class="resultDetails pl-3 pt-2">
+                            <div class="resultTitle">
+                                <h6 class="mb-0">{{result.snippet?.title}}</h6>
+                            </div>
+                            <div class="resultViews_datePublished text-muted">
+                                <p class="mb-2"><span>{{result.viewCount}} </span> <span>&bull;</span> <span> {{result.snippet?.publishedAt}}</span></p>
+                            </div>
+                            <div class="resultChannel d-flex align-items-center mb-2">
+                                <div class="banner rounded-pill overflow-hidden">
+                                    <img src="{{result.channelThumbnail}}" style="width: 100%; height: 100%;" alt="">
+                                </div>  
+                                <p class="name ml-2 mb-0">{{result.snippet?.channelTitle}}</p>
+                            </div>
+                            <div class="resultDescription">
+                                <p>{{result.snippet?.description}}</p>
+                            </div>
+                            <div class="extraTags">
+                                <div *ngIf="result.snippet?.liveBroadcastContent == 'live'" class="is_live d-flex align-items-center" style="width: max-content;"><span class="material-icons live_icon">sensors</span> <span class="text">LIVE</span></div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="resultViews_datePublished">
-                        <p><span>317k views</span> . <span>8 months ago</span></p>
+                </ng-template>
+
+                
+
+            
+
+                <ng-template [ngIf]="result.id?.kind == 'youtube#channel'">
+                    <!-- a channel result -->
+                    <div class="result_channel d-flex my-3">
+
+                        <div class="channelThumbWrap">
+                            <div class="resultThumbnail_channel" style="background: url({{result.snippet?.thumbnails?.high?.url}});">
+                                
+                            </div>
+                        </div>
+
+                        <div class="d-flex det_wrap">
+                            <div class="resultDetails">
+                                <div class="channelTitle">
+                                    <h6 class="mb-0">{{result.snippet?.channelTitle}}</h6>
+                                </div>
+                                <div class="resultViews_datePublished text-muted">
+                                    <p class="mb-2"><span>{{result.subscriberCount}} subscribers </span> <span>&bull;</span> <span> {{result.videoCount}} videos</span></p>
+                                </div>
+                                <div class="resultDescription_channel">
+                                    <p class="mb-0">{{result.snippet?.description}}</p>
+                                </div>
+                                <div class="extraTags">
+                                    <div *ngIf="result.snippet?.liveBroadcastContent == 'live'" class="is_live d-flex align-items-center" style="width: max-content;"><span class="material-icons live_icon">sensors</span> <span class="text">LIVE</span></div>
+                                </div>
+                            </div>
+            
+                            <div class="subscribeBtnDiv px-2">
+                                <button>SUBSCRIBE</button>
+                            </div>
+                        </div>
+
                     </div>
-                    <div class="resultChannel d-flex align-items-center mb-3">
-                        <div class="banner rounded-pill">
-                            <img src="" alt="">
-                        </div>  
-                        <p class="name ml-3 mb-0">PedroTech</p>
-                    </div>
-                    <div class="resultDescription">
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-                    </div>
-                </div>
+                </ng-template>
+
             </div>
-            <div class="result d-flex my-3">
-                <div class="resultThumbnail">
-                    <img class="img-fluid" src="" alt="">
-                </div>
-                <div class="resultDetails pl-3 pt-2">
-                    <div class="resultTitle">
-                        <h5>React Hooks Course - All React Hooks Explained</h5>
-                    </div>
-                    <div class="resultViews_datePublished">
-                        <p><span>317k views</span> . <span>8 months ago</span></p>
-                    </div>
-                    <div class="resultChannel d-flex align-items-center mb-3">
-                        <div class="banner rounded-pill">
-                            <img src="" alt="">
-                        </div>  
-                        <p class="name ml-3 mb-0">PedroTech</p>
-                    </div>
-                    <div class="resultDescription">
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="result d-flex my-3">
-                <div class="resultThumbnail">
-                    <img class="img-fluid" src="" alt="">
-                </div>
-                <div class="resultDetails pl-3 pt-2">
-                    <div class="resultTitle">
-                        <h5>React Hooks Course - All React Hooks Explained</h5>
-                    </div>
-                    <div class="resultViews_datePublished">
-                        <p><span>317k views</span> . <span>8 months ago</span></p>
-                    </div>
-                    <div class="resultChannel d-flex align-items-center mb-3">
-                        <div class="banner rounded-pill">
-                            <img src="" alt="">
-                        </div>  
-                        <p class="name ml-3 mb-0">PedroTech</p>
-                    </div>
-                    <div class="resultDescription">
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="result d-flex my-3">
-                <div class="resultThumbnail">
-                    <img class="img-fluid" src="" alt="">
-                </div>
-                <div class="resultDetails pl-3 pt-2">
-                    <div class="resultTitle">
-                        <h5>React Hooks Course - All React Hooks Explained</h5>
-                    </div>
-                    <div class="resultViews_datePublished">
-                        <p><span>317k views</span> . <span>8 months ago</span></p>
-                    </div>
-                    <div class="resultChannel d-flex align-items-center mb-3">
-                        <div class="banner rounded-pill">
-                            <img src="" alt="">
-                        </div>  
-                        <p class="name ml-3 mb-0">PedroTech</p>
-                    </div>
-                    <div class="resultDescription">
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-                    </div>
-                </div>
-            </div>
+
+            
+
+            
         </div>
     </div>
 </div>
+
+<!-- <div class="result d-flex my-3" *ngFor="let result of results">
+    <div class="position-relative">
+        <div class="resultThumbnail">
+                
+        </div>
+        <div class="duration position-absolute text-white" style="right: 3px; bottom: 3px; padding: 0px 2px 0px 2px; background-color: black; font-family: roboto; font-size: 12px; font-weight: 600;">
+            <p class="mb-0">02:00</p>
+        </div>
+    </div>
+    <div class="resultDetails pl-3 pt-2">
+        <div class="resultTitle">
+            <h6 class="mb-0">React Hooks Course - All React Hooks Explained</h6>
+        </div>
+        <div class="resultViews_datePublished text-muted">
+            <p class="mb-2"><span>317k views </span> <span>&bull;</span> <span> 8 months ago</span></p>
+        </div>
+        <div class="resultChannel d-flex align-items-center mb-2">
+            <div class="banner rounded-pill">
+                <img src="" alt="">
+            </div>  
+            <p class="name ml-2 mb-0">PedroTech</p>
+        </div>
+        <div class="resultDescription">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere iure sit earum culpa, quaerat tempora perspiciatis ducimus optio! Error, ipsa!</p>
+        </div>
+    </div>
+</div> -->
