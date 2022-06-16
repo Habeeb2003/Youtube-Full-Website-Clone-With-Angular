@@ -13,6 +13,9 @@ export class ResultsComponent implements OnInit {
   open : boolean = false
 
   results : searchResult[] | undefined
+  rs = [
+    {},{},{},{},{}
+  ]
   subscription: Subscription;
   filterSubscription : Subscription
 
@@ -36,7 +39,13 @@ export class ResultsComponent implements OnInit {
       this.filters = filters
     })
     console.log(this.filters.order);
-    
+    this.resultService.getPlaylist().then(data => {
+      console.log(data);
+      this.resultService.playlistVideoDuration(data.items![0].contentDetails!.videoId!).then(res => {
+        console.log(res);
+        
+      })
+    })
   }
 
   toggleFilterDropdown(){

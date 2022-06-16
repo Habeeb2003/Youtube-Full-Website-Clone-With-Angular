@@ -111,6 +111,25 @@ export class YoutubeService {
     })
   }
 
+  public getPlaylist(id: string) : Promise<gapi.client.youtube.PlaylistItemListResponse>{
+    return new Promise(resolve => {
+      gapi.client.youtube.playlistItems.list({
+        part: ["id","snippet","contentDetails","status"],
+        playlistId: id
+      }).then(res => resolve(res.result))
+    })
+  }
+
+  public getPlaylistVideoDuration(id: string) : Promise<gapi.client.youtube.VideoListResponse>{
+    return new Promise(resolve => {
+      gapi.client.youtube.videos.list({
+        part: ["contentDetails"],
+        id: id,
+        fields: "items(contentDetails(duration))"
+      }).then(res => resolve(res.result))
+    })
+  }
+
   // public listt() : Promise<gapi.client.youtube.Video>{
   //   return new Promise( resolve => {
   //     gapi.client.youtube.

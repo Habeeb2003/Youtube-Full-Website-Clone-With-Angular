@@ -103,6 +103,22 @@ export class SearchResultService {
             
           })
         }
+        if (item.id?.kind == "youtube#playlist") {
+          this.youtubeService.getPlaylist(item.id.playlistId!).then(res => {
+            console.log("my",res);
+            
+            item.firstPlaylistVideoTitle = res.items![0].snippet?.title
+            item.secondPlaylistVideoTitle = res.items![1].snippet?.title
+            this.youtubeService.getPlaylistVideoDuration(res.items![0].contentDetails?.videoId!).then(data => {
+              console.log(data);
+              
+              item.firstPlaylistVideoDuration = converTime(data.items![0].contentDetails?.duration!)
+            })
+            this.youtubeService.getPlaylistVideoDuration(res.items![1].contentDetails?.videoId!).then(data => {
+              item.secondPlaylistVideoDuration = converTime(data.items![0].contentDetails?.duration!)
+            })
+          })
+        }
       })
       this.updateResult(response.items)
     })
@@ -113,6 +129,23 @@ export class SearchResultService {
     console.log('hi man');
     
     this.updateFilter(this.filterSource.getValue())
+  }
+  public getPlaylist() : Promise<gapi.client.youtube.PlaylistItemListResponse>{
+    return new Promise(resolve => {
+      gapi.client.youtube.playlistItems.list({
+        part: ["id","snippet","contentDetails","status"],
+        playlistId: "PLC3y8-rFHvwhBRAgFinJR8KHIrCdTkZcZ"
+      }).then(res => resolve(res.result))
+    })
+  }
+  public playlistVideoDuration(id: string) : Promise<gapi.client.youtube.Video>{
+    return new Promise(resolve => {
+      gapi.client.youtube.videos.list({
+        part: ["contentDetails"],
+        id: id,
+        fields: "items(contentDetails(duration))"
+      }).then(res => resolve(res.result))
+    })
   }
 
 }
