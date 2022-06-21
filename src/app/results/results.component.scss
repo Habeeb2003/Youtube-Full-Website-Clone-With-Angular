@@ -88,6 +88,9 @@
                         background-color: lightgray;
                         aspect-ratio: 1/1;
                         width: 25px;
+                        background-repeat: no-repeat !important;
+                        background-size: cover !important;
+                        background-position: center !important;
                     }
                     .name{
                         font-size: 12px;
@@ -193,6 +196,9 @@
                 background-size: cover !important;
                 background-position: center !important;
             }
+            .overlay{
+                display: none;
+            }
             .resultDetails{
                 .playlistTitle{
                     display: -webkit-box;
@@ -256,6 +262,11 @@
                 }
             }
         }
+        .result_playlist:hover{
+            .overlay{
+                display: flex;
+            }
+        } 
     }
 }
 

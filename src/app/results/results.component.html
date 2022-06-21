@@ -11,15 +11,15 @@
                         </div>
                         <ul>
 
-                            <li class="filt" (click)="filterSearch([{filter: 'type', value: 'video'}])"><span>Last hour</span> <span class="material-icons close_icon">clear</span></li>
+                            <li class="filt" [ngClass]="(activeTimeFilter == 'hour' ? 'active' : '')" (click)="activeTimeFilter == 'hour' ? getDateForFilter(undefined) : getDateForFilter('H')"><span>Last hour</span> <span class="material-icons close_icon">clear</span></li>
 
-                            <li class="filt" (click)="filterSearch([{filter: 'type', value: 'video'}])">Today <span class="material-icons close_icon">clear</span></li>
+                            <li class="filt" [ngClass]="(activeTimeFilter == 'today' ? 'active' : '')" (click)="activeTimeFilter == 'today' ? getDateForFilter(undefined) : getDateForFilter('T')">Today <span class="material-icons close_icon">clear</span></li>
 
-                            <li class="filt" (click)="filterSearch([{filter: 'type', value: 'video'}])">This week <span class="material-icons close_icon">clear</span></li>
+                            <li class="filt" [ngClass]="(activeTimeFilter == 'week' ? 'active' : '')" (click)="activeTimeFilter == 'week' ? getDateForFilter(undefined) : getDateForFilter('W')">This week <span class="material-icons close_icon">clear</span></li>
 
-                            <li class="filt" (click)="filterSearch([{filter: 'type', value: 'video'}])">This month <span class="material-icons close_icon">clear</span></li>
+                            <li class="filt" [ngClass]="(activeTimeFilter == 'month' ? 'active' : '')" (click)="activeTimeFilter == 'month' ? getDateForFilter(undefined) : getDateForFilter('M')">This month <span class="material-icons close_icon">clear</span></li>
 
-                            <li class="filt" (click)="filterSearch([{filter: 'type', value: 'video'}])">This year <span class="material-icons close_icon">clear</span></li>
+                            <li class="filt" [ngClass]="(activeTimeFilter == 'year' ? 'active' : '')" (click)="activeTimeFilter == 'year' ?  getDateForFilter(undefined) : getDateForFilter('Y')">This year <span class="material-icons close_icon">clear</span></li>
 
                         </ul>
                     </div>
@@ -31,9 +31,9 @@
 
                             <li class="filt" [ngClass]="(filters.type == 'video' ? 'active' : '')" (click)="filterSearch([{filter: 'type', value: (checkIfActive($event) ? undefined : 'video')}])">Video <span class="material-icons close_icon">clear</span></li>
 
-                            <li class="filt" [ngClass]="(filters.type == 'video' ? 'disabled' : '')"  (click)="filterSearch([{filter: 'type', value: (checkIfActive($event) ? undefined : 'channel')}])">Channel <span class="material-icons close_icon">clear</span></li>
+                            <li class="filt" [ngClass]="(filters.type == 'video' ? 'disabled' : '')"  [ngClass]="filters.type == 'channel' ? 'active': '' " (click)="filterSearch([{filter: 'type', value: (checkIfActive($event) ? undefined : 'channel')}])">Channel <span class="material-icons close_icon">clear</span></li>
 
-                            <li class="filt" [ngClass]="(filters.type == 'video' ? 'disabled' : '')" (click)="filterSearch([{filter: 'type', value: (checkIfActive($event) ? undefined : 'playlist')}])">Playlist <span class="material-icons close_icon">clear</span></li>
+                            <li class="filt" [ngClass]="(filters.type == 'video' ? 'disabled' : '')" [ngClass]="filters.type == 'playlist' ? 'active': '' " (click)="filterSearch([{filter: 'type', value: (checkIfActive($event) ? undefined : 'playlist')}])">Playlist <span class="material-icons close_icon">clear</span></li>
 
                             <li class="filt" [ngClass]="(filters.videoType == 'movie' ? 'active' : '')" (click)="filterSearch([{filter: 'videoType', value: (checkIfActive($event) ? undefined : 'movie')}])">Film <span class="material-icons close_icon">clear</span></li>
 
@@ -131,8 +131,7 @@
                                 <p class="mb-2"><span>{{result.viewCount}} </span> <span>&bull;</span> <span> {{result.snippet?.publishedAt}}</span></p>
                             </div>
                             <div class="resultChannel d-flex align-items-center mb-2">
-                                <div class="banner rounded-pill overflow-hidden">
-                                    <img src="{{result.channelThumbnail}}" style="width: 100%; height: 100%;" alt="">
+                                <div class="banner rounded-pill overflow-hidden" style="background: url({{result.channelThumbnail}});">
                                 </div>  
                                 <p class="name ml-2 mb-0">{{result.snippet?.channelTitle}}</p>
                             </div>
@@ -184,11 +183,15 @@
                     <div class="result_playlist d-flex my-3">
                         <div class="position-relative">
                             <div class="resultThumbnail" style="background: url({{result.snippet?.thumbnails?.high?.url}});">
-                                    
+                                
                             </div>
                             <div class="position-absolute text-white" style="display: flex; justify-content: center; flex-direction: column; align-items: center; right: 0px; top: 0px; width: 33%; bottom: 0px; padding: 0px 2px 0px 2px; background-color: rgba(0, 0, 0, 0.65); font-family: roboto; font-size: 12px; font-weight: 600;">
-                                <p class="mb-0" style="font-size: 15px;">11</p>
+                                <p class="mb-0" style="font-size: 15px;">{{result.noOfVideos}}</p>
                                 <p class="mb-0"><span class="material-icons" style="font-size: 28px;">playlist_play</span></p>
+                            </div>
+                            <div class="overlay position-absolute align-items-center justify-content-center" style="color: white; background-color: rgba(0, 0, 0, 0.85); width: 100%; top: 0; bottom: 0;">
+                                <span class="material-icons-round">play_arrow</span>
+                                <span style="font-size: 14px; font-weight: 400;">PLAY ALL</span>
                             </div>
                         </div>
                         <div class="resultDetails pl-3 pt-2">
@@ -199,8 +202,8 @@
                                 <p class="mb-2"><span>{{result.snippet?.channelTitle}} </span></p>
                             </div>
                             <div class="resultDescription">
-                                <p class="mb-1"><span>{{result.firstPlaylistVideoTitle}}</span> <span>&bull;</span> <span>{{result.firstPlaylistVideoDuration}}</span></p>
-                                <p class="mb-1"><span>{{result.secondPlaylistVideoTitle}}</span> <span>&bull;</span> <span>{{result.secondPlaylistVideoDuration}}</span></p>
+                                <p class="mb-1"><span>{{result.firstPlaylistVideoTitle}} </span> <span>&bull;</span> <span> {{result.firstPlaylistVideoDuration}}</span></p>
+                                <p class="mb-1"><span>{{result.secondPlaylistVideoTitle}} </span> <span>&bull;</span> <span> {{result.secondPlaylistVideoDuration}}</span></p>
                             </div>
         
                             <div class="mt-2">
