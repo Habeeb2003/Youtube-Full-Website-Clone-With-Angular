@@ -57,6 +57,7 @@ export interface searchResult extends gapi.client.youtube.SearchResult{
   firstPlaylistVideoDuration?: string
   secondPlaylistVideoTitle?: string
   secondPlaylistVideoDuration?: string
+  noOfVideos?: number
 }
 
 const intervals = [

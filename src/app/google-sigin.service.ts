@@ -11,6 +11,8 @@ export class GoogleSiginService {
   private subject = new ReplaySubject<gapi.auth2.GoogleUser | null>(1)
 
   constructor() { 
+    console.log("ran");
+    
     gapi.load("auth2", () => {
       this.auth2 = gapi.auth2.init({
         client_id: '900118353356-hc2rv9rnvedf54o5tp1bg1fdu1a0rots.apps.googleusercontent.com'

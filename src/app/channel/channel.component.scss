@@ -1,0 +1,70 @@
+.channelViewArea{
+    height: 90vh;
+    width: 100%;
+    overflow-y: scroll;
+    .channelBanner{
+        width: 100%;
+        height: calc(16.1290322581vw - 1px);
+        background-color: lightgray;
+    }
+    .channelName_Details{
+        .leftSide{
+            div.image{
+                width: 80px;
+                height: 80px;
+                background-color: lightgrey;
+            }
+        }
+        .rightSide{
+            .subscribeBtnDiv{
+                height: fit-content;
+                .subscribeBtn{
+                  background-color: #CC0000;
+                  color: white;
+                  border: none;
+                  outline: none;
+                  font-weight: 500;
+                  font-size: 20px;
+                  padding: 9px 20px;
+                }
+            }
+        }
+    }
+    mat-tab-group{
+        .yt_c_fGroup{
+            padding: 0px 50px;
+            width: 100%;
+            border-bottom: 1px solid lightgrey;
+            .yt_c_firstVideo{
+                width: 35%;
+                aspect-ratio: 16 / 9;
+                background-color: lightgrey;
+            }
+            .descriptionContainer{
+                max-width: 40%;
+                .readMoreBtn{
+                    border: none;
+                    outline: none;
+                }
+            }
+        }
+        .yt_upload_group{
+            .head_ing{
+                button{
+                    border: none;
+                    outline: none;
+                }
+            }
+            .videoCardCon{
+                .videoCard{
+                    width: min-content;
+                    .videoThumbnail{
+                        width: 200px;
+                        aspect-ratio: 16 /9;
+                        background-color: lightgrey;
+                    }
+                }
+            }
+        }
+    }
+}

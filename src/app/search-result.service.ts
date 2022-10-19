@@ -107,6 +107,7 @@ export class SearchResultService {
           this.youtubeService.getPlaylist(item.id.playlistId!).then(res => {
             console.log("my",res);
             
+            item.noOfVideos = res.pageInfo?.totalResults;
             item.firstPlaylistVideoTitle = res.items![0].snippet?.title
             item.secondPlaylistVideoTitle = res.items![1].snippet?.title
             this.youtubeService.getPlaylistVideoDuration(res.items![0].contentDetails?.videoId!).then(data => {
